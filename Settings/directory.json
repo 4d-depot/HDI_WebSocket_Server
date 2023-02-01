@@ -1,0 +1,26 @@
+﻿{
+	"users": {
+		"designer": {
+			"alias": "Designer"
+		},
+		"administrator": {
+			"alias": "Administrator"
+		}
+	},
+	"sqlSchemaGranters": {
+		"DEFAULT_SCHEMA": {
+			"readOnlyAccessGroup": "*",
+			"readWriteAccessGroup": "*",
+			"allAccessGroup": ""
+		}
+	},
+	"remoteGranters": {},
+	"settings": {
+		"LocalGenericWebUser": "Designer",
+		"DesignAccessGroup": "*",
+		"LocalMobileAccessGroupRW": "*",
+		"RemoteMobileAccessGroupRW": "*",
+		"RemoteGenericWebUser": "Designer",
+		"RemoteDefaultUser": ""
+	}
+}

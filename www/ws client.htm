@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>4D WebSocket Server</title>
+  <style>
+    .col{
+      width:300px;
+      height:500px;
+    }
+    #messages{
+      height:75%;
+      width:100%; 
+      overflow:scroll;
+      border:1px solid Silver;
+    }
+    #messageBox{
+      display:block; 
+      width:100%;
+      margin-bottom:10px;
+      padding:10px 0px 10px 0px;
+      border:1px solid Silver;
+    }
+    #send{
+      width:100%;
+      height:30px
+    }
+  </style>
+</head>
+<body>
+  <div class="col">
+    <pre id="messages"></pre>
+    <input type="text" id="messageBox" placeholder="Type you message here"/>
+    <button id="send" title="Send Message!">Send Message!</button>
+  </div>
+  <script>
+    (function(){
+    const sendBtn=document.querySelector('#send');
+    const messages=document.querySelector('#messages');
+    const messageBox=document.querySelector('#messageBox');
+    const urlwss="ws://127.0.0.1:8080/";
+    let ws;
+    
+    function showMessage(message){
+      messages.innerHTML +=message;
+      messages.scrollTop=messages.scrollHeight;
+    }
+  
+    function init(){
+      if (ws){
+        ws.close();
+      }
+      ws = new WebSocket(urlwss);
+      ws.addEventListener('message',function message({data}){
+        showMessage(data);
+      });
+      ws.addEventListener('close',function close(){
+        ws=null;
+      });
+      sendBtn.onclick=function(){
+        if (!ws){
+          showMessage("<p style='color:red'>Error: No websocket connection!</p>");
+          return;
+        }
+        ws.send(messageBox.value);
+        showMessage("<p style='color:black'>"+messageBox.value+"</p>");
+        messageBox.value='';
+      }
+    }
+    
+    init();
+    
+  })();
+</script>
+</body>
+</html>
