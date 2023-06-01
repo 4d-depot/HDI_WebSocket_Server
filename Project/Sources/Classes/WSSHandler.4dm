@@ -1,7 +1,6 @@
 Class constructor($winRef : Integer)
 	
 	This:C1470.countClient:=0
-	This:C1470.dataType:="object"
 	This:C1470.winRef:=$winRef
 	
 	/// Function called when the server starts

@@ -28,7 +28,7 @@
 			<table_ref uuid="107A367EBCC346259FD971E8FC1097DA" name="INFO"/>
 		</field_ref>
 	</index>
-	<base_extra __stringCompHash="icu:68.1.0" __keywordBuildingHash="icu:68.1.0" package_name="HDI_Template_v17" structure_file_name="HowDoI" data_file_path="\HowDoI.4DD">
+	<base_extra __stringCompHash="icu:72.1.0" __keywordBuildingHash="icu:72.1.0" package_name="HDI_Template_v17" structure_file_name="HowDoI" data_file_path="\HowDoI.4DD">
 		<journal_file journal_file_enabled="false"/>
 	</base_extra>
 </base>
